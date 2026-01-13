@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Wishlist - Saalify</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      .wishlist-container {
+        max-width: 1200px;
+        margin: 4rem auto;
+        padding: 0 2rem;
+        min-height: 60vh;
+      }
+
+      .wishlist-header {
+        margin-bottom: 3rem;
+        text-align: center;
+      }
+
+      .wishlist-header h1 {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .wishlist-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 2rem;
+      }
+
+      .empty-wishlist {
+        text-align: center;
+        padding: 4rem 2rem;
+      }
+
+      .empty-wishlist i {
+        font-size: 5rem;
+        color: var(--text-light);
+        opacity: 0.3;
+        margin-bottom: 1.5rem;
+      }
+
+      .empty-wishlist h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .empty-wishlist p {
+        color: var(--text-light);
+        margin-bottom: 2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header Navigation -->
+    <header class="header" role="banner">
+      <div class="container">
+        <nav class="navbar" role="navigation" aria-label="Main navigation">
+          <div class="logo">
+            <a href="index.html">
+              <i class="fas fa-shopping-bag"></i>
+              <span>Saalify</span>
+            </a>
+          </div>
+
+          <ul class="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#shop">Shop</a></li>
+            <li><a href="index.html#collections">Collections</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+
+          <div class="nav-icons">
+            <button
+              class="icon-btn"
+              id="theme-toggle"
+              aria-label="Toggle dark mode"
+              title="Toggle dark mode"
+            >
+              <i class="fas fa-moon"></i>
+            </button>
+            <button class="icon-btn" id="user-btn" aria-label="User account">
+              <i class="fas fa-user"></i>
+            </button>
+            <button
+              class="icon-btn cart-btn"
+              id="cart-btn"
+              aria-label="Shopping cart"
+            >
+              <i class="fas fa-shopping-cart"></i>
+              <span class="cart-count">0</span>
+            </button>
+          </div>
+
+          <button
+            class="mobile-menu-toggle"
+            id="mobile-menu-toggle"
+            aria-label="Toggle mobile menu"
+          >
+            <i class="fas fa-bars"></i>
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <div class="container">
+        <ol>
+          <li>
+            <a href="index.html"><i class="fas fa-home"></i> Home</a>
+          </li>
+          <li>Wishlist</li>
+        </ol>
+      </div>
+    </nav>
+
+    <!-- Wishlist Content -->
+    <div class="wishlist-container">
+      <div class="wishlist-header">
+        <h1><i class="fas fa-heart"></i> My Wishlist</h1>
+        <p>Save your favorite items for later</p>
+      </div>
+
+      <div id="wishlist-content">
+        <div class="empty-wishlist">
+          <i class="fas fa-heart-broken"></i>
+          <h2>Your wishlist is empty</h2>
+          <p>Start adding products you love to your wishlist</p>
+          <a href="index.html#shop" class="btn btn-primary">Start Shopping</a>
+        </div>
+      </div>
+
+      <div class="wishlist-grid" id="wishlist-grid" style="display: none"></div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <h3>
+              <i class="fas fa-shopping-bag"></i>
+              Saalify
+            </h3>
+            <p>
+              Your trusted e-commerce platform for quality products and
+              exceptional service.
+            </p>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-facebook"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+          </div>
+
+          <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="index.html#shop">Shop</a></li>
+              <li><a href="index.html#collections">Collections</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="wishlist.html">Wishlist</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Customer Service</h4>
+            <ul>
+              <li><a href="#">Shipping Info</a></li>
+              <li><a href="#">Returns</a></li>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="privacy.html">Privacy Policy</a></li>
+              <li><a href="terms.html">Terms of Service</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Contact Info</h4>
+            <ul>
+              <li>
+                <i class="fas fa-map-marker-alt"></i> 123 Commerce St, NY 10001
+              </li>
+              <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+              <li><i class="fas fa-envelope"></i> info@saalify.com</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2026 Saalify. All rights reserved.</p>
+          <div class="payment-methods">
+            <i class="fab fa-cc-visa"></i>
+            <i class="fab fa-cc-mastercard"></i>
+            <i class="fab fa-cc-paypal"></i>
+            <i class="fab fa-cc-amex"></i>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+      // Load wishlist from localStorage
+      const wishlistIds =
+        JSON.parse(localStorage.getItem("saalify-wishlist")) || [];
+
+      if (wishlistIds.length > 0) {
+        document.getElementById("wishlist-content").style.display = "none";
+        document.getElementById("wishlist-grid").style.display = "grid";
+
+        // Import products from script.js would be ideal, but for now we'll fetch from localStorage
+        // In a real app, this would be an API call
+        const sampleProducts = [
+          {
+            id: 1,
+            name: "Classic White T-Shirt",
+            category: "fashion",
+            price: 29.99,
+            rating: 4.5,
+            reviews: 128,
+            icon: "fa-tshirt",
+          },
+          {
+            id: 2,
+            name: "Wireless Headphones",
+            category: "electronics",
+            price: 149.99,
+            rating: 4.8,
+            reviews: 256,
+            icon: "fa-headphones",
+          },
+          {
+            id: 3,
+            name: "Leather Watch",
+            category: "accessories",
+            price: 199.99,
+            rating: 4.6,
+            reviews: 89,
+            icon: "fa-watch",
+          },
+        ];
+
+        const wishlistProducts = sampleProducts.filter((p) =>
+          wishlistIds.includes(p.id)
+        );
+
+        document.getElementById("wishlist-grid").innerHTML = wishlistProducts
+          .map(
+            (product) => `
+                <div class="product-card">
+                    <div class="product-image">
+                        <i class="fas ${product.icon}"></i>
+                        <div class="product-actions">
+                            <button class="action-btn" onclick="removeFromWishlist(${
+                              product.id
+                            })" title="Remove from Wishlist">
+                                <i class="fas fa-heart-broken"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">${product.category}</div>
+                        <h3 class="product-title">${product.name}</h3>
+                        <div class="product-footer">
+                            <div class="product-price">£${product.price.toFixed(
+                              2
+                            )}</div>
+                            <button class="add-to-cart-btn" onclick="addToCartFromWishlist(${
+                              product.id
+                            })">
+                                <i class="fas fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `
+          )
+          .join("");
+      }
+
+      function removeFromWishlist(productId) {
+        let wishlist =
+          JSON.parse(localStorage.getItem("saalify-wishlist")) || [];
+        wishlist = wishlist.filter((id) => id !== productId);
+        localStorage.setItem("saalify-wishlist", JSON.stringify(wishlist));
+        location.reload();
+      }
+
+      function addToCartFromWishlist(productId) {
+        // This would call the actual addToCart function from script.js
+        alert("Added to cart! This would integrate with the main cart system.");
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us - Saalify</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      .about-hero {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 6rem 0 4rem;
+        text-align: center;
+      }
+
+      .about-hero h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+      }
+
+      .about-content {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 4rem 2rem;
+      }
+
+      .about-section {
+        margin-bottom: 4rem;
+      }
+
+      .about-section h2 {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+        color: var(--primary-color);
+      }
+
+      .about-section p {
+        font-size: 1.125rem;
+        line-height: 1.8;
+        color: var(--text-light);
+        margin-bottom: 1rem;
+      }
+
+      .values-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+      }
+
+      .value-card {
+        text-align: center;
+        padding: 2rem;
+        background: var(--bg-light);
+        border-radius: var(--border-radius);
+      }
+
+      .value-card i {
+        font-size: 3rem;
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+      }
+
+      .value-card h3 {
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+      }
+
+      .team-section {
+        background: var(--bg-light);
+        padding: 4rem 0;
+      }
+
+      .team-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
+
+      .team-member {
+        background: white;
+        border-radius: var(--border-radius);
+        padding: 2rem;
+        text-align: center;
+        box-shadow: var(--shadow-sm);
+      }
+
+      .team-member-avatar {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        margin: 0 auto 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 3rem;
+        color: white;
+      }
+
+      .team-member h3 {
+        margin-bottom: 0.5rem;
+      }
+
+      .team-member-role {
+        color: var(--primary-color);
+        font-weight: 600;
+        margin-bottom: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header Navigation -->
+    <header class="header">
+      <div class="container">
+        <nav class="navbar">
+          <div class="logo">
+            <a href="index.html">
+              <i class="fas fa-shopping-bag"></i>
+              <span>Saalify</span>
+            </a>
+          </div>
+
+          <ul class="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#shop">Shop</a></li>
+            <li><a href="index.html#collections">Collections</a></li>
+            <li><a href="about.html" class="active">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+
+          <div class="nav-icons">
+            <button class="icon-btn" id="user-btn">
+              <i class="fas fa-user"></i>
+            </button>
+            <button class="icon-btn cart-btn" id="cart-btn">
+              <i class="fas fa-shopping-cart"></i>
+              <span class="cart-count">0</span>
+            </button>
+          </div>
+
+          <button class="mobile-menu-toggle" id="mobile-menu-toggle">
+            <i class="fas fa-bars"></i>
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <!-- About Hero -->
+    <section class="about-hero">
+      <div class="container">
+        <h1>About Saalify</h1>
+        <p>Building the future of e-commerce, one customer at a time</p>
+      </div>
+    </section>
+
+    <!-- About Content -->
+    <div class="about-content">
+      <div class="about-section">
+        <h2>Our Story</h2>
+        <p>
+          Founded in 2024, Saalify emerged from a simple idea: to create an
+          e-commerce platform that puts customers first. We believe shopping
+          online should be easy, enjoyable, and trustworthy. From day one, we've
+          been committed to offering quality products, exceptional service, and
+          a seamless shopping experience.
+        </p>
+        <p>
+          Today, Saalify serves thousands of customers worldwide, offering
+          everything from fashion and electronics to home goods and accessories.
+          Our curated selection ensures that every product meets our high
+          standards of quality and value.
+        </p>
+      </div>
+
+      <div class="about-section">
+        <h2>Our Mission</h2>
+        <p>
+          At Saalify, our mission is to make quality products accessible to
+          everyone, everywhere. We strive to provide an unmatched shopping
+          experience through innovation, customer service, and a commitment to
+          excellence. We're not just selling products—we're building
+          relationships and creating a community of satisfied customers.
+        </p>
+      </div>
+
+      <div class="about-section">
+        <h2>Our Values</h2>
+        <div class="values-grid">
+          <div class="value-card">
+            <i class="fas fa-heart"></i>
+            <h3>Customer First</h3>
+            <p>
+              Your satisfaction is our top priority. We go above and beyond to
+              ensure every experience is exceptional.
+            </p>
+          </div>
+          <div class="value-card">
+            <i class="fas fa-shield-alt"></i>
+            <h3>Trust & Security</h3>
+            <p>
+              We protect your data and ensure every transaction is secure. Your
+              trust is our foundation.
+            </p>
+          </div>
+          <div class="value-card">
+            <i class="fas fa-leaf"></i>
+            <h3>Sustainability</h3>
+            <p>
+              We're committed to eco-friendly practices and sustainable products
+              for a better tomorrow.
+            </p>
+          </div>
+          <div class="value-card">
+            <i class="fas fa-lightbulb"></i>
+            <h3>Innovation</h3>
+            <p>
+              We continuously improve our platform to provide the best shopping
+              experience possible.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Team Section -->
+    <section class="team-section">
+      <div class="container">
+        <h2 class="section-title">Meet Our Team</h2>
+        <div class="team-grid">
+          <div class="team-member">
+            <div class="team-member-avatar">
+              <i class="fas fa-user"></i>
+            </div>
+            <h3>Sarah Johnson</h3>
+            <div class="team-member-role">CEO & Founder</div>
+            <p>Visionary leader with 15+ years in e-commerce</p>
+          </div>
+          <div class="team-member">
+            <div class="team-member-avatar">
+              <i class="fas fa-user"></i>
+            </div>
+            <h3>Michael Chen</h3>
+            <div class="team-member-role">CTO</div>
+            <p>Tech innovator driving our platform forward</p>
+          </div>
+          <div class="team-member">
+            <div class="team-member-avatar">
+              <i class="fas fa-user"></i>
+            </div>
+            <h3>Emily Rodriguez</h3>
+            <div class="team-member-role">Head of Customer Service</div>
+            <p>Ensuring every customer has a great experience</p>
+          </div>
+          <div class="team-member">
+            <div class="team-member-avatar">
+              <i class="fas fa-user"></i>
+            </div>
+            <h3>David Kim</h3>
+            <div class="team-member-role">Head of Operations</div>
+            <p>Making sure everything runs smoothly</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <h3>
+              <i class="fas fa-shopping-bag"></i>
+              Saalify
+            </h3>
+            <p>
+              Your trusted e-commerce platform for quality products and
+              exceptional service.
+            </p>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-facebook"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+          </div>
+
+          <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="index.html#shop">Shop</a></li>
+              <li><a href="index.html#collections">Collections</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Customer Service</h4>
+            <ul>
+              <li><a href="#">Shipping Info</a></li>
+              <li><a href="#">Returns</a></li>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">Track Order</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Contact Info</h4>
+            <ul>
+              <li>
+                <i class="fas fa-map-marker-alt"></i> 123 Commerce St, NY 10001
+              </li>
+              <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+              <li><i class="fas fa-envelope"></i> info@saalify.com</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2026 Saalify. All rights reserved.</p>
+          <div class="payment-methods">
+            <i class="fab fa-cc-visa"></i>
+            <i class="fab fa-cc-mastercard"></i>
+            <i class="fab fa-cc-paypal"></i>
+            <i class="fab fa-cc-amex"></i>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile menu toggle
+      document
+        .getElementById("mobile-menu-toggle")
+        .addEventListener("click", () => {
+          document.querySelector(".nav-menu").classList.toggle("active");
+        });
+
+      // Update cart count from localStorage
+      const cart = JSON.parse(localStorage.getItem("saalify-cart")) || [];
+      const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+      document.querySelector(".cart-count").textContent = totalItems;
+
+      // Cart button
+      document.getElementById("cart-btn").addEventListener("click", () => {
+        window.location.href = "index.html";
+      });
+    </script>
+  </body>
+</html>

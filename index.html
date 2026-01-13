@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Saalify - Your Modern E-Commerce Platform. Shop fashion, electronics, accessories & home goods with free shipping, easy returns & 24/7 support."
+    />
+    <meta
+      name="keywords"
+      content="e-commerce, shopping, fashion, electronics, accessories, home goods, online store"
+    />
+    <meta name="author" content="Saalify" />
+    <meta name="theme-color" content="#2563eb" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://saalify.com/" />
+    <meta property="og:title" content="Saalify - Modern E-Commerce Platform" />
+    <meta
+      property="og:description"
+      content="Shop the latest trends in fashion, electronics, and lifestyle products. Free shipping on orders over £50."
+    />
+    <meta property="og:image" content="https://saalify.com/og-image.jpg" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://saalify.com/" />
+    <meta
+      property="twitter:title"
+      content="Saalify - Modern E-Commerce Platform"
+    />
+    <meta
+      property="twitter:description"
+      content="Shop the latest trends in fashion, electronics, and lifestyle products."
+    />
+    <meta property="twitter:image" content="https://saalify.com/og-image.jpg" />
+
+    <!-- PWA -->
+    <link rel="manifest" href="manifest.json" />
+    <link rel="apple-touch-icon" href="icon-192.png" />
+
+    <title>Saalify - Modern E-Commerce Platform</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+
+    <!-- Cookie Consent Banner -->
+    <div class="cookie-consent" id="cookie-consent">
+      <div class="cookie-content">
+        <p>
+          We use cookies to enhance your experience. By continuing to visit this
+          site you agree to our use of cookies.
+        </p>
+        <div class="cookie-buttons">
+          <button class="btn btn-primary" id="accept-cookies">Accept</button>
+          <button class="btn btn-secondary" id="decline-cookies">
+            Decline
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Header Navigation -->
+    <header class="header" role="banner">
+      <div class="container">
+        <nav class="navbar" role="navigation" aria-label="Main navigation">
+          <div class="logo">
+            <a href="index.html">
+              <i class="fas fa-shopping-bag"></i>
+              <span>Saalify</span>
+            </a>
+          </div>
+
+          <!-- nav-menu -->
+          <ul class="nav-menu">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="#shop">Shop</a></li>
+            <li><a href="#collections">Collections</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+
+          <div class="nav-icons">
+            <button
+              class="icon-btn"
+              id="theme-toggle"
+              aria-label="Toggle dark mode"
+              title="Toggle dark mode"
+            >
+              <i class="fas fa-moon"></i>
+            </button>
+            <div class="search-container">
+              <input
+                type="text"
+                id="search-input"
+                placeholder="Search products..."
+                aria-label="Search products"
+              />
+              <button class="search-btn" aria-label="Search">
+                <i class="fas fa-search"></i>
+              </button>
+            </div>
+            <button class="icon-btn" id="user-btn" aria-label="User account">
+              <i class="fas fa-user"></i>
+            </button>
+            <button
+              class="icon-btn cart-btn"
+              id="cart-btn"
+              aria-label="Shopping cart"
+            >
+              <i class="fas fa-shopping-cart"></i>
+              <span class="cart-count">0</span>
+            </button>
+          </div>
+
+          <button
+            class="mobile-menu-toggle"
+            id="mobile-menu-toggle"
+            aria-label="Toggle mobile menu"
+            aria-expanded="false"
+          >
+            <i class="fas fa-bars"></i>
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+      <!-- Hero Section -->
+      <section class="hero">
+        <div class="hero-content">
+          <h1 class="hero-title">Discover Your Style</h1>
+          <p class="hero-subtitle">
+            Shop the latest trends in fashion, electronics, and lifestyle
+            products
+          </p>
+          <div class="hero-buttons">
+            <a href="#shop" class="btn btn-primary">Shop Now</a>
+            <a href="#collections" class="btn btn-secondary btn-contrast">
+              <span>View Collections</span>
+              <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <div class="hero-placeholder">
+            <i class="fas fa-shopping-bag"></i>
+          </div>
+        </div>
+      </section>
+
+      <!-- Features Section -->
+      <section class="features">
+        <div class="container">
+          <div class="feature-grid">
+            <div class="feature-card">
+              <i class="fas fa-shipping-fast"></i>
+              <h3>Free Shipping</h3>
+              <p>On orders over £50</p>
+            </div>
+            <div class="feature-card">
+              <i class="fas fa-undo"></i>
+              <h3>Easy Returns</h3>
+              <p>30-day return policy</p>
+            </div>
+            <div class="feature-card">
+              <i class="fas fa-lock"></i>
+              <h3>Secure Payment</h3>
+              <p>100% secure transactions</p>
+            </div>
+            <div class="feature-card">
+              <i class="fas fa-headset"></i>
+              <h3>24/7 Support</h3>
+              <p>Always here to help</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Collections Section -->
+      <section class="collections" id="collections">
+        <div class="container">
+          <h2 class="section-title">Shop by Collection</h2>
+          <div class="collection-grid">
+            <div class="collection-card" data-category="fashion">
+              <div class="collection-image">
+                <i class="fas fa-tshirt"></i>
+              </div>
+              <h3>Fashion</h3>
+              <p>Trending Styles</p>
+            </div>
+            <div class="collection-card" data-category="electronics">
+              <div class="collection-image">
+                <i class="fas fa-laptop"></i>
+              </div>
+              <h3>Electronics</h3>
+              <p>Latest Tech</p>
+            </div>
+            <div class="collection-card" data-category="accessories">
+              <div class="collection-image">
+                <i class="fas fa-watch"></i>
+              </div>
+              <h3>Accessories</h3>
+              <p>Complete Your Look</p>
+            </div>
+            <div class="collection-card" data-category="home">
+              <div class="collection-image">
+                <i class="fas fa-couch"></i>
+              </div>
+              <h3>Home & Living</h3>
+              <p>Comfort & Style</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Products Section -->
+      <section class="products" id="shop">
+        <div class="container">
+          <div class="products-header">
+            <h2 class="section-title">Featured Products</h2>
+
+            <!-- Product Controls -->
+            <div class="product-controls">
+              <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="fashion">
+                  Fashion
+                </button>
+                <button class="filter-btn" data-filter="electronics">
+                  Electronics
+                </button>
+                <button class="filter-btn" data-filter="accessories">
+                  Accessories
+                </button>
+                <button class="filter-btn" data-filter="home">Home</button>
+              </div>
+
+              <div class="sort-controls">
+                <label for="sort-select">Sort by:</label>
+                <select id="sort-select" aria-label="Sort products">
+                  <option value="default">Default</option>
+                  <option value="price-low">Price: Low to High</option>
+                  <option value="price-high">Price: High to Low</option>
+                  <option value="rating">Highest Rated</option>
+                  <option value="name">Name: A-Z</option>
+                </select>
+              </div>
+
+              <div class="price-filter">
+                <label
+                  >Price Range: £<span id="price-min-label">0</span> - £<span
+                    id="price-max-label"
+                    >500</span
+                  ></label
+                >
+                <input
+                  type="range"
+                  id="price-range"
+                  min="0"
+                  max="500"
+                  value="500"
+                  aria-label="Filter by price"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Loading Skeleton -->
+          <div
+            class="loading-skeleton"
+            id="loading-skeleton"
+            style="display: none"
+          >
+            <div class="skeleton-card"></div>
+            <div class="skeleton-card"></div>
+            <div class="skeleton-card"></div>
+            <div class="skeleton-card"></div>
+          </div>
+
+          <div class="products-grid" id="products-grid" role="list">
+            <!-- Products will be dynamically loaded here -->
+          </div>
+          <!-- --Subcategory -->
+          <div
+            class="subcategory-panel"
+            id="subcategory-panel"
+            aria-live="polite"
+          >
+            <div class="subcategory-header">
+              <h3>Subcategory Highlights</h3>
+              <p id="subcategory-label">Tap a category to see curated picks.</p>
+            </div>
+            <div class="subcategory-grid" id="subcategory-grid"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Newsletter Section -->
+      <section class="newsletter">
+        <div class="container">
+          <div class="newsletter-content">
+            <h2>Join Our Newsletter</h2>
+            <p>Subscribe to get special offers, free giveaways, and updates</p>
+            <form class="newsletter-form" id="newsletter-form">
+              <input type="email" placeholder="Enter your email" required />
+              <button type="submit" class="btn btn-primary">Subscribe</button>
+            </form>
+            <p
+              class="form-feedback"
+              id="newsletter-feedback"
+              role="status"
+              aria-live="polite"
+            ></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section class="contact" id="contact">
+        <div class="container">
+          <div class="contact-header">
+            <div>
+              <p class="eyebrow">Need a quick response?</p>
+              <h2 class="section-title">Talk to an Official Representative</h2>
+              <p class="contact-subtitle">
+                Get the right person the first time. Our leads handle
+                escalations, purchasing, billing, and partnerships.
+              </p>
+            </div>
+            <div class="contact-cta">
+              <span class="contact-sla">Avg. response: under 1 hour</span>
+              <a class="btn btn-primary" href="tel:+15551234567">
+                <i class="fas fa-phone"></i> Call Support
+              </a>
+            </div>
+          </div>
+
+          <div class="contact-grid">
+            <article class="contact-card">
+              <div class="contact-role">Customer Success Lead</div>
+              <h3>Habeeb Kehinde</h3>
+              <p>Order updates, product questions, and post-purchase care.</p>
+              <ul class="contact-meta">
+                <li>
+                  <i class="fas fa-phone"></i
+                  ><a href="tel:+15551234567">+1 (555) 123-4567</a>
+                </li>
+                <li>
+                  <i class="fas fa-envelope"></i
+                  ><a href="mailto:amina@saalify.com">amina@saalify.com</a>
+                </li>
+                <li><i class="fas fa-clock"></i>Mon-Fri, 8am-6pm EST</li>
+              </ul>
+            </article>
+
+            <article class="contact-card">
+              <div class="contact-role">Logistics & Fulfillment</div>
+              <h3>David Chen</h3>
+              <p>Shipping issues, replacements, and priority deliveries.</p>
+              <ul class="contact-meta">
+                <li>
+                  <i class="fas fa-phone"></i
+                  ><a href="tel:+15559876543">+1 (555) 987-6543</a>
+                </li>
+                <li>
+                  <i class="fas fa-envelope"></i
+                  ><a href="mailto:david@saalify.com">david@saalify.com</a>
+                </li>
+                <li><i class="fas fa-clock"></i>Mon-Sat, 7am-5pm EST</li>
+              </ul>
+            </article>
+
+            <article class="contact-card">
+              <div class="contact-role">Billing & Payments</div>
+              <h3>Sofia Martins</h3>
+              <p>Invoices, refunds, payment plans, and tax documents.</p>
+              <ul class="contact-meta">
+                <li>
+                  <i class="fas fa-phone"></i
+                  ><a href="tel:+15557654321">+1 (555) 765-4321</a>
+                </li>
+                <li>
+                  <i class="fas fa-envelope"></i
+                  ><a href="mailto:sofia@saalify.com">sofia@saalify.com</a>
+                </li>
+                <li><i class="fas fa-clock"></i>Mon-Fri, 9am-6pm EST</li>
+              </ul>
+            </article>
+
+            <article class="contact-card">
+              <div class="contact-role">Partnerships & Wholesale</div>
+              <h3>Omar Bello</h3>
+              <p>Bulk orders, retail partnerships, and sponsorships.</p>
+              <ul class="contact-meta">
+                <li>
+                  <i class="fas fa-phone"></i
+                  ><a href="tel:+15551239876">+1 (555) 123-9876</a>
+                </li>
+                <li>
+                  <i class="fas fa-envelope"></i
+                  ><a href="mailto:omar@saalify.com">omar@saalify.com</a>
+                </li>
+                <li><i class="fas fa-clock"></i>Mon-Fri, 10am-7pm EST</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="container">
+          <div class="footer-grid">
+            <div class="footer-col">
+              <h3>
+                <i class="fas fa-shopping-bag"></i>
+                Saalify
+              </h3>
+              <p>
+                Your trusted e-commerce platform for quality products and
+                exceptional service.
+              </p>
+              <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+              </div>
+            </div>
+
+            <div class="footer-col">
+              <h4>Quick Links</h4>
+              <ul>
+                <li><a href="#shop">Shop</a></li>
+                <li><a href="#collections">Collections</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+              </ul>
+            </div>
+
+            <div class="footer-col">
+              <h4>Customer Service</h4>
+              <ul>
+                <li><a href="#">Shipping Info</a></li>
+                <li><a href="#">Returns</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Track Order</a></li>
+                <li><a href="privacy.html">Privacy Policy</a></li>
+                <li><a href="terms.html">Terms of Service</a></li>
+              </ul>
+            </div>
+
+            <div class="footer-col">
+              <h4>Contact Info</h4>
+              <ul>
+                <li>
+                  <i class="fas fa-map-marker-alt"></i> 123 Commerce St, NY
+                  10001
+                </li>
+                <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                <li><i class="fas fa-envelope"></i> info@saalify.com</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="footer-bottom">
+            <p>&copy; 2026 Saalify. All rights reserved.</p>
+            <div class="payment-methods">
+              <i class="fab fa-cc-visa"></i>
+              <i class="fab fa-cc-mastercard"></i>
+              <i class="fab fa-cc-paypal"></i>
+              <i class="fab fa-cc-amex"></i>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+      <!-- Shopping Cart Sidebar -->
+      <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+          <h3>Shopping Cart</h3>
+          <button class="close-cart" id="close-cart">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+
+        <div class="cart-items" id="cart-items">
+          <!-- Cart items will be dynamically loaded here -->
+        </div>
+
+        <div class="cart-footer">
+          <div class="cart-total">
+            <span>Total:</span>
+            <span class="total-price">£0.00</span>
+          </div>
+          <button class="btn btn-primary btn-block" id="checkout-btn">
+            Proceed to Checkout
+          </button>
+          <button class="btn btn-secondary btn-block" id="continue-shopping">
+            Continue Shopping
+          </button>
+        </div>
+      </div>
+
+      <!-- Overlay -->
+      <div class="overlay" id="overlay"></div>
+
+      <!-- Product Quick View Modal -->
+      <div
+        class="modal"
+        id="quick-view-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modal-title"
+      >
+        <div class="modal-content">
+          <button class="modal-close" id="close-modal" aria-label="Close modal">
+            <i class="fas fa-times"></i>
+          </button>
+          <h2 id="modal-title" class="modal-title">Product Quick View</h2>
+          <div class="modal-body" id="modal-body">
+            <!-- Product details will be loaded here -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Back to Top Button -->
+      <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+      </button>
+
+      <!-- Toast Notification Container -->
+      <div class="toast-container" id="toast-container"></div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

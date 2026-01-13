@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout - Saalify</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      .checkout-container {
+        max-width: 1200px;
+        margin: 4rem auto;
+        padding: 0 2rem;
+      }
+
+      .checkout-grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 3rem;
+      }
+
+      .checkout-section {
+        background: var(--bg-white);
+        padding: 2rem;
+        border-radius: var(--border-radius);
+        box-shadow: var(--shadow-sm);
+      }
+
+      .checkout-section h2 {
+        margin-bottom: 1.5rem;
+        color: var(--text-dark);
+        font-size: 1.5rem;
+      }
+
+      .form-group {
+        margin-bottom: 1.5rem;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+        color: var(--text-dark);
+      }
+
+      .form-group input,
+      .form-group select {
+        width: 100%;
+        padding: 12px;
+        border: 2px solid var(--border-color);
+        border-radius: var(--border-radius);
+        font-size: 16px;
+        transition: var(--transition);
+      }
+
+      .form-group input:focus,
+      .form-group select:focus {
+        outline: none;
+        border-color: var(--primary-color);
+      }
+
+      .form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+      }
+
+      .order-summary {
+        position: sticky;
+        top: 100px;
+        height: fit-content;
+      }
+
+      .order-item {
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem 0;
+        border-bottom: 1px solid var(--border-color);
+      }
+
+      .order-item-details {
+        flex: 1;
+      }
+
+      .order-item-name {
+        font-weight: 600;
+        margin-bottom: 0.25rem;
+      }
+
+      .order-item-quantity {
+        color: var(--text-light);
+        font-size: 0.875rem;
+      }
+
+      .order-item-price {
+        font-weight: 600;
+        color: var(--primary-color);
+      }
+
+      .order-totals {
+        padding-top: 1rem;
+      }
+
+      .total-row {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 0.75rem;
+      }
+
+      .total-row.grand-total {
+        font-size: 1.25rem;
+        font-weight: 700;
+        padding-top: 0.75rem;
+        border-top: 2px solid var(--border-color);
+        color: var(--primary-color);
+      }
+
+      .payment-methods {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .payment-option {
+        padding: 1rem;
+        border: 2px solid var(--border-color);
+        border-radius: var(--border-radius);
+        cursor: pointer;
+        text-align: center;
+        transition: var(--transition);
+      }
+
+      .payment-option:hover {
+        border-color: var(--primary-color);
+      }
+
+      .payment-option.active {
+        border-color: var(--primary-color);
+        background-color: rgba(37, 99, 235, 0.1);
+      }
+
+      .payment-option i {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+        color: var(--primary-color);
+      }
+
+      @media (max-width: 968px) {
+        .checkout-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .form-row {
+          grid-template-columns: 1fr;
+        }
+
+        .order-summary {
+          position: static;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header Navigation -->
+    <header class="header">
+      <div class="container">
+        <nav class="navbar">
+          <div class="logo">
+            <a href="index.html">
+              <i class="fas fa-shopping-bag"></i>
+              <span>Saalify</span>
+            </a>
+          </div>
+
+          <ul class="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#shop">Shop</a></li>
+            <li><a href="index.html#collections">Collections</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+
+          <div class="nav-icons">
+            <button class="icon-btn" id="user-btn">
+              <i class="fas fa-user"></i>
+            </button>
+            <button class="icon-btn cart-btn" id="cart-btn">
+              <i class="fas fa-shopping-cart"></i>
+              <span class="cart-count">0</span>
+            </button>
+          </div>
+
+          <button class="mobile-menu-toggle" id="mobile-menu-toggle">
+            <i class="fas fa-bars"></i>
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Checkout Container -->
+    <div class="checkout-container">
+      <h1 style="margin-bottom: 2rem; font-size: 2.5rem">Checkout</h1>
+
+      <div class="checkout-grid">
+        <!-- Left Column - Forms -->
+        <div>
+          <!-- Shipping Information -->
+          <div class="checkout-section">
+            <h2><i class="fas fa-shipping-fast"></i> Shipping Information</h2>
+            <form id="checkout-form">
+              <div class="form-row">
+                <div class="form-group">
+                  <label>First Name *</label>
+                  <input type="text" required placeholder="John" />
+                </div>
+                <div class="form-group">
+                  <label>Last Name *</label>
+                  <input type="text" required placeholder="Doe" />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label>Email *</label>
+                <input
+                  type="email"
+                  required
+                  placeholder="john.doe@example.com"
+                />
+              </div>
+
+              <div class="form-group">
+                <label>Phone Number *</label>
+                <input type="tel" required placeholder="+1 (555) 123-4567" />
+              </div>
+
+              <div class="form-group">
+                <label>Address *</label>
+                <input type="text" required placeholder="123 Main Street" />
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label>City *</label>
+                  <input type="text" required placeholder="New York" />
+                </div>
+                <div class="form-group">
+                  <label>State *</label>
+                  <select required>
+                    <option value="">Select State</option>
+                    <option value="NY">New York</option>
+                    <option value="CA">California</option>
+                    <option value="TX">Texas</option>
+                    <option value="FL">Florida</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label>ZIP Code *</label>
+                  <input type="text" required placeholder="10001" />
+                </div>
+                <div class="form-group">
+                  <label>Country *</label>
+                  <select required>
+                    <option value="US">United States</option>
+                    <option value="CA">Canada</option>
+                    <option value="UK">United Kingdom</option>
+                  </select>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <!-- Payment Information -->
+          <div class="checkout-section" style="margin-top: 2rem">
+            <h2><i class="fas fa-credit-card"></i> Payment Method</h2>
+
+            <div class="payment-methods">
+              <div class="payment-option active" data-method="card">
+                <i class="fas fa-credit-card"></i>
+                <div>Credit Card</div>
+              </div>
+              <div class="payment-option" data-method="paypal">
+                <i class="fab fa-paypal"></i>
+                <div>PayPal</div>
+              </div>
+              <div class="payment-option" data-method="apple">
+                <i class="fab fa-apple-pay"></i>
+                <div>Apple Pay</div>
+              </div>
+              <div class="payment-option" data-method="google">
+                <i class="fab fa-google-pay"></i>
+                <div>Google Pay</div>
+              </div>
+            </div>
+
+            <div id="card-details">
+              <div class="form-group">
+                <label>Card Number *</label>
+                <input
+                  type="text"
+                  placeholder="1234 5678 9012 3456"
+                  maxlength="19"
+                />
+              </div>
+
+              <div class="form-group">
+                <label>Cardholder Name *</label>
+                <input type="text" placeholder="John Doe" />
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Expiry Date *</label>
+                  <input type="text" placeholder="MM/YY" maxlength="5" />
+                </div>
+                <div class="form-group">
+                  <label>CVV *</label>
+                  <input type="text" placeholder="123" maxlength="4" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column - Order Summary -->
+        <div>
+          <div class="checkout-section order-summary">
+            <h2><i class="fas fa-receipt"></i> Order Summary</h2>
+
+            <div id="order-items">
+              <!-- Order items will be loaded here -->
+            </div>
+
+            <div class="order-totals">
+              <div class="total-row">
+                <span>Subtotal:</span>
+                <span id="subtotal">£0.00</span>
+              </div>
+              <div class="total-row">
+                <span>Shipping:</span>
+                <span id="shipping">£9.99</span>
+              </div>
+              <div class="total-row">
+                <span>Tax:</span>
+                <span id="tax">£0.00</span>
+              </div>
+              <div class="total-row grand-total">
+                <span>Total:</span>
+                <span id="grand-total">£0.00</span>
+              </div>
+            </div>
+
+            <button
+              class="btn btn-primary btn-block"
+              id="place-order-btn"
+              style="margin-top: 1.5rem"
+            >
+              <i class="fas fa-lock"></i> Place Order
+            </button>
+
+            <div
+              style="
+                text-align: center;
+                margin-top: 1rem;
+                color: var(--text-light);
+                font-size: 0.875rem;
+              "
+            >
+              <i class="fas fa-shield-alt"></i> Secure checkout powered by SSL
+              encryption
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer" style="margin-top: 4rem">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <h3>
+              <i class="fas fa-shopping-bag"></i>
+              Saalify
+            </h3>
+            <p>
+              Your trusted e-commerce platform for quality products and
+              exceptional service.
+            </p>
+          </div>
+
+          <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="index.html#shop">Shop</a></li>
+              <li><a href="index.html#collections">Collections</a></li>
+              <li><a href="about.html">About Us</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Customer Service</h4>
+            <ul>
+              <li><a href="#">Shipping Info</a></li>
+              <li><a href="#">Returns</a></li>
+              <li><a href="#">FAQ</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Contact Info</h4>
+            <ul>
+              <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+              <li><i class="fas fa-envelope"></i> info@saalify.com</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2026 Saalify. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Load cart items
+      const cart = JSON.parse(localStorage.getItem("saalify-cart")) || [];
+
+      if (cart.length === 0) {
+        window.location.href = "index.html";
+      }
+
+      // Update cart count
+      const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+      document.querySelector(".cart-count").textContent = totalItems;
+
+      // Render order items
+      const orderItemsContainer = document.getElementById("order-items");
+      orderItemsContainer.innerHTML = cart
+        .map(
+          (item) => `
+            <div class="order-item">
+                <div class="order-item-details">
+                    <div class="order-item-name">${item.name}</div>
+                    <div class="order-item-quantity">Qty: ${item.quantity}</div>
+                </div>
+                <div class="order-item-price">$${(
+                  item.price * item.quantity
+                ).toFixed(2)}</div>
+            </div>
+        `
+        )
+        .join("");
+
+      // Calculate totals
+      const subtotal = cart.reduce(
+        (sum, item) => sum + item.price * item.quantity,
+        0
+      );
+      const shipping = subtotal > 50 ? 0 : 9.99;
+      const tax = subtotal * 0.08;
+      const grandTotal = subtotal + shipping + tax;
+
+      document.getElementById("subtotal").textContent = `$${subtotal.toFixed(
+        2
+      )}`;
+      document.getElementById("shipping").textContent =
+        shipping === 0 ? "FREE" : `$${shipping.toFixed(2)}`;
+      document.getElementById("tax").textContent = `$${tax.toFixed(2)}`;
+      document.getElementById(
+        "grand-total"
+      ).textContent = `$${grandTotal.toFixed(2)}`;
+
+      // Payment method selection
+      const paymentOptions = document.querySelectorAll(".payment-option");
+      paymentOptions.forEach((option) => {
+        option.addEventListener("click", () => {
+          paymentOptions.forEach((opt) => opt.classList.remove("active"));
+          option.classList.add("active");
+        });
+      });
+
+      // Place order
+      document
+        .getElementById("place-order-btn")
+        .addEventListener("click", () => {
+          const form = document.getElementById("checkout-form");
+          if (form.checkValidity()) {
+            // Show success message
+            alert(
+              "Order placed successfully! Thank you for shopping with Saalify."
+            );
+
+            // Clear cart
+            localStorage.removeItem("saalify-cart");
+
+            // Redirect to home
+            window.location.href = "index.html";
+          } else {
+            form.reportValidity();
+          }
+        });
+
+      // Mobile menu toggle
+      document
+        .getElementById("mobile-menu-toggle")
+        .addEventListener("click", () => {
+          document.querySelector(".nav-menu").classList.toggle("active");
+        });
+
+      // Cart button
+      document.getElementById("cart-btn").addEventListener("click", () => {
+        window.location.href = "index.html";
+      });
+    </script>
+  </body>
+</html>
